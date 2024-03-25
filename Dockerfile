@@ -1,4 +1,4 @@
-FROM 5hojib/aeon:latest
+FROM OMlinks/ML:latest
 WORKDIR /usr/src/app
 COPY . .
 CMD ["bash", "start.sh"]
