@@ -118,6 +118,9 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         text += f'<b>• Media Group:</b> {media_group}\n'
         text += f'<b>• Leech Caption:</b> <code>{escape(lcaption)}</code>\n'
         text += f'<b>• Leech Dump:</b> <code>{ldump}</code>\n'
+        text += f'<b>• Prefix:</b> <code>{prefix}</code>\n'
+        text += f'<b>• Suffix:</b> <code>{suffix}</code>\n'
+        text += f'<b>• Remname:</b> <code>{remname}</code>'
         text += f'<b>• MediaInfo Mode:</b> <code>{mediainfo}</code>'
 
         buttons.ibutton("Back", f"userset {user_id} back", "footer")
@@ -165,7 +168,7 @@ async def update_user_settings(query, key=None, edit_type=None, edit_mode=None, 
     user_id = query.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = 'https://graph.org/file/73ae908d18c6b38038071.jpg'
+        thumbnail = 'https://telegra.ph/file/997f9b539fdd6c9f77da3.jpg'
     await editMessage(query.message, msg, button, thumbnail)
 
 
@@ -175,7 +178,7 @@ async def user_settings(client, message):
     user_id = message.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = 'https://graph.org/file/73ae908d18c6b38038071.jpg'
+        thumbnail = 'https://telegra.ph/file/997f9b539fdd6c9f77da3.jpg'
     x = await sendMessage(message, msg, button, thumbnail)
     await five_minute_del(message)
     await deleteMessage(x)
