@@ -1,4 +1,4 @@
-FROM OMlinks/Ommlbot:latest
+FROM OMlinks/ommlbot:latest
 WORKDIR /usr/src/app
 COPY . .
 CMD ["bash", "start.sh"]
